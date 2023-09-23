@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>体测成绩计算器</title>
+	<link rel="stylesheet" href="css/ace.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/main.js"></script>
+
+	<style type="text/css">
+		.profile-info-value>span+span:before{
+			display: none;
+		}
+		.form-control{
+			width: 90%;
+		}
+	</style>
+</head>
+<body>
+	<div class="row">
+            <div class="self profile-user-info profile-user-info-striped">
+				<div class="profile-info-row">
+                    <div class="profile-info-name">性别：</div>
+                    <div class="profile-info-value">
+                        <select id="gender" class="form-control value_element" onchange="sexChange()">
+                                <option value="1"> 男 </option>
+                                <option value="2"> 女 </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name">年级：</div>
+                    <div class="profile-info-value">
+                        <select id="grade" class="form-control value_element" onchange="gradeChange()">
+                                <option value="1"> 六年级 </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 身高(cm)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="height" class="form-control">
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 体重(kg)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="weight" class="form-control value_element">
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> BMI(仅显示3位小数)：</div>
+                    <div class="profile-info-value ">
+                    	<span id="IBM" class="form-control value_element" style="width: 70%; display: inline-block;">0</span>
+                    	<button type="button" class="btn btn-primary" onclick="IBM()">查询</button>
+                    	<br/>
+                    	分数：<span id="IBMGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 肺活量(mL)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="lungCapacity" class="form-control value_element" onchange="lungCapacity()">
+                    	分数：<span id="lungCapacityGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 50米跑(s)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="50metre" class="form-control value_element" onchange="fifyMetre()">
+                    	分数：<span id="50metreGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 一分钟跳绳(次)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="standingLongJump" class="form-control value_element" onchange="standingLongJump()">
+                    	分数：<span id="standingLongJumpGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div id="sexChange2" class="profile-info-name"> 50×8往返跑：</div>
+                    <div class="profile-info-value form-inline">
+                    	<input type="number" id="1000MetreMinutes" class="form-control value_element" style="width: 30%; display: inline;" onchange="thousandMetre()">
+                    	分
+                    	<input type="number" id="1000MetreSecond" class="form-control value_element" style="width: 30%; display: inline;" onchange="thousandMetre()">
+                    	秒
+                        <br />
+                   		分数：<span id="1000MetreGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 坐位体前屈(cm)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="zwtqq" class="form-control value_element" onchange="zwtqq()">
+                    	分数：<span id="zwtqqGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div id="sexChange1" class="profile-info-name"> 1分钟仰卧起坐(次)：</div>
+                    <div class="profile-info-value">
+                    	<input type="number" id="ytxs" class="form-control value_element" onchange="ytxsOrywqz()">
+                    	分数：<span id="ytxsGrade">0</span>
+                	</div>
+                </div>
+
+                <div class="profile-info-row">
+                    <div class="profile-info-name"> 总分数：</div>
+                    <div class="profile-info-value ">
+                        <span id="totalScore" class="form-control value_element" style="width: 70%; display: inline-block;">0</span>
+                        <button type="button" class="btn btn-primary" onclick="check()">查询</button>
+                	</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span style="position: absolute; width: 100%; text-align: center; color: #CCCCCC; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px;">
+        计算结果仅供参考，请以最终成绩为准。
+        <br>
+        作者：金子睿
+        <br>
+        Author：Alex
+    </span>
+</body>
+</html>
