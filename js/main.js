@@ -1,6 +1,6 @@
 /**
  * Computational results
- * @version 1.0.0
+ * @version 2.0.0
  */
 
  const gradeArray = [
@@ -90,6 +90,19 @@ function IBM() {
 			break;
 	}
 	document.getElementById('IBMGrade').innerText = grade;
+	if(grade==100){
+		document.getElementById('IBMLevel').innerText = "正常";
+		document.getElementById('IBMLevel').style.color="blue";
+	}else if(IBM<=14.6){
+		document.getElementById('IBMLevel').innerText = "低体重";
+		document.getElementById('IBMLevel').style.color="green";
+	}else if(IBM>=21.9 && IBM<=24.5){
+		document.getElementById('IBMLevel').innerText = "超重";
+		document.getElementById('IBMLevel').style.color="orange";
+	}else{
+		document.getElementById('IBMLevel').innerText = "肥胖";
+		document.getElementById('IBMLevel').style.color="red";
+	}
 	return grade;
 }
 
@@ -149,9 +162,17 @@ function standingLongJump() {
 	var standard3 = [];
 	var standard4 = [];
 	if(getInFo()==2 && value>166){
-		var fu=parseInt((value-166)/2);
+		if (parseInt((value-166)/2)>20){
+			var fu=20;
+		}else{
+			var fu=parseInt((value-166)/2);
+		}
 	}else if(getInFo()==1 && value>157){
-		var fu=parseInt((value-157)/2);
+		if (parseInt((value-157)/2)>20){
+			var fu=20;
+		}else{
+			var fu=parseInt((value-157)/2);
+		}
 	}else{
 		var fu=0;
 	}
@@ -163,7 +184,19 @@ function standingLongJump() {
 	}else{
 		document.getElementById('standingLongJumpGrade').innerText = grade;
 	}
-	
+	if(grade>=90){
+		document.getElementById('standingLongJumpLevel').innerText = "优秀";
+		document.getElementById('standingLongJumpLevel').style.color="blue";
+	}else if(grade<=85 && grade>=80){
+		document.getElementById('standingLongJumpLevel').innerText = "良好";
+		document.getElementById('standingLongJumpLevel').style.color="green";
+	}else if(grade<=78 && grade>=60){
+		document.getElementById('standingLongJumpLevel').innerText = "及格";
+		document.getElementById('standingLongJumpLevel').style.color="orange";
+	}else{
+		document.getElementById('standingLongJumpLevel').innerText = "不及格";
+		document.getElementById('standingLongJumpLevel').style.color="red";
+	}
 	return grade;
 }
 
@@ -220,10 +253,23 @@ function lungCapacity() {
 1080,
 1050
 	];
-var standard3 = []
-var standard4 = []
+	var standard3 = []
+	var standard4 = []
 	var grade = upCalculateScore(value, standard1, standard2, standard3, standard4);
 	document.getElementById('lungCapacityGrade').innerText = grade;
+	if(grade>=90){
+		document.getElementById('lungCapacityLevel').innerText = "优秀";
+		document.getElementById('lungCapacityLevel').style.color="blue";
+	}else if(grade<=85 && grade>=80){
+		document.getElementById('lungCapacityLevel').innerText = "良好";
+		document.getElementById('lungCapacityLevel').style.color="green";
+	}else if(grade<=78 && grade>=60){
+		document.getElementById('lungCapacityLevel').innerText = "及格";
+		document.getElementById('lungCapacityLevel').style.color="orange";
+	}else{
+		document.getElementById('lungCapacityLevel').innerText = "不及格";
+		document.getElementById('lungCapacityLevel').style.color="red";
+	}
 	return grade;
 }
 
@@ -284,6 +330,19 @@ function fifyMetre() {
 	var standard4 = [];
 	var grade = downCalculateScore(value, standard1, standard2, standard3, standard4);
 	document.getElementById('50metreGrade').innerText = grade;
+	if(grade>=90){
+		document.getElementById('50metreLevel').innerText = "优秀";
+		document.getElementById('50metreLevel').style.color="blue";
+	}else if(grade<=85 && grade>=80){
+		document.getElementById('50metreLevel').innerText = "良好";
+		document.getElementById('50metreLevel').style.color="green";
+	}else if(grade<=78 && grade>=60){
+		document.getElementById('50metreLevel').innerText = "及格";
+		document.getElementById('50metreLevel').style.color="orange";
+	}else{
+		document.getElementById('50metreLevel').innerText = "不及格";
+		document.getElementById('50metreLevel').style.color="red";
+	}
 	return grade;
 }
 
@@ -348,6 +407,19 @@ function thousandMetre() {
 	var standard4 = [];
 	var grade = downCalculateScore(value, standard1, standard2, standard3, standard4);
 	document.getElementById('1000MetreGrade').innerText = grade;
+	if(grade>=90){
+		document.getElementById('1000MetreLevel').innerText = "优秀";
+		document.getElementById('1000MetreLevel').style.color="blue";
+	}else if(grade<=85 && grade>=80){
+		document.getElementById('1000MetreLevel').innerText = "良好";
+		document.getElementById('1000MetreLevel').style.color="green";
+	}else if(grade<=78 && grade>=60){
+		document.getElementById('1000MetreLevel').innerText = "及格";
+		document.getElementById('1000MetreLevel').style.color="orange";
+	}else{
+		document.getElementById('1000MetreLevel').innerText = "不及格";
+		document.getElementById('1000MetreLevel').style.color="red";
+	}
 	return grade;
 }
 
@@ -408,6 +480,19 @@ function zwtqq() {
 	var standard4 = [];
 	var grade = upCalculateScore(value, standard1, standard2, standard3, standard4);
 	document.getElementById('zwtqqGrade').innerText = grade;
+	if(grade>=90){
+		document.getElementById('zwtqqLevel').innerText = "优秀";
+		document.getElementById('zwtqqLevel').style.color="blue";
+	}else if(grade<=85 && grade>=80){
+		document.getElementById('zwtqqLevel').innerText = "良好";
+		document.getElementById('zwtqqLevel').style.color="green";
+	}else if(grade<=78 && grade>=60){
+		document.getElementById('zwtqqLevel').innerText = "及格";
+		document.getElementById('zwtqqLevel').style.color="orange";
+	}else{
+		document.getElementById('zwtqqLevel').innerText = "不及格";
+		document.getElementById('zwtqqLevel').style.color="red";
+	}
 	return grade;
 }
 
@@ -468,6 +553,19 @@ function ytxsOrywqz() {
 	var standard4 = [];
 	var grade = upCalculateScore(value, standard1, standard2, standard3, standard4);
 	document.getElementById('ytxsGrade').innerText = grade;
+	if(grade>=90){
+		document.getElementById('ytxsLevel').innerText = "优秀";
+		document.getElementById('ytxsLevel').style.color="blue";
+	}else if(grade<=85 && grade>=80){
+		document.getElementById('ytxsLevel').innerText = "良好";
+		document.getElementById('ytxsLevel').style.color="green";
+	}else if(grade<=78 && grade>=60){
+		document.getElementById('ytxsLevel').innerText = "及格";
+		document.getElementById('ytxsLevel').style.color="orange";
+	}else{
+		document.getElementById('ytxsLevel').innerText = "不及格";
+		document.getElementById('ytxsLevel').style.color="red";
+	}
 	return grade;
 }
 
